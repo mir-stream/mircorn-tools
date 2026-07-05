@@ -1,6 +1,6 @@
 {
   "name": "advisor-crew",
   "description": "Advisor/Implementer/Reviewer role system: main session works as an Advisor (judge & delegate), with implementer and adversarial reviewer subagents",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": { "name": "mircorn" }
 }
