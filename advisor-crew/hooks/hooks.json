@@ -1,0 +1,16 @@
+{
+  "description": "Inject Advisor role instructions into the main session only (subagents never see SessionStart output)",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat \"${CLAUDE_PLUGIN_ROOT}/advisor.md\"",
+            "statusMessage": "Advisor 역할 지침 주입"
+          }
+        ]
+      }
+    ]
+  }
+}

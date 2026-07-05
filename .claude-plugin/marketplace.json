@@ -1,0 +1,11 @@
+{
+  "name": "mircorn-tools",
+  "owner": { "name": "mircorn" },
+  "plugins": [
+    {
+      "name": "advisor-crew",
+      "source": "./advisor-crew",
+      "description": "Advisor/Implementer/Reviewer role system: main session works as an Advisor (judge & delegate), with implementer and adversarial reviewer subagents"
+    }
+  ]
+}
