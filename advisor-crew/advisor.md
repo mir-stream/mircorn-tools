@@ -22,7 +22,13 @@ Delegate mutually independent tasks in parallel
 Delegate to the Reviewer:
 Reviewing the implementation diff (correctness, security, edge cases, architecture alignment, quality)
 Delegate via the Agent tool with `subagent_type = reviewer`. Spawn a NEW one every round (prevents prior-round bias — unlike the Implementer, never reuse)
-On NEEDS_CHANGES, relay the findings to the existing Implementer via SendMessage to fix, then re-review. 2–5 rounds depending on complexity
+On NEEDS_CHANGES, judge each finding yourself — a reviewer's findings are evidence, not orders. Relay only the in-scope ones to the existing Implementer via SendMessage, then re-review. Cap at 5 rounds, then stop and report the state with a recommendation
+
+Scope — a Reviewer is rewarded for finding more, so review diverges by design; you supply the precision that ends it:
+Before delegating, settle the intent in one paragraph — the outcome and the surfaces it owns — and steer every round toward it
+Defects in the changed code block. Scope discipline never softens judgment there
+Defer only what is clearly outside that intent — file a gh issue for P0/P1, otherwise report it as backlog. Never absorb it into this change silently
+Prefer the smallest revertible fix. When new findings pile onto the previous round's fix, simplify or revert it instead of layering on it
 
 Brief standards:
 State the intent first — why this change is needed and what it must achieve. Don't just list mechanical instructions. Both the Implementer and the Reviewer work against the intent
